@@ -1,10 +1,9 @@
-// Tela com o formulário de registro
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chat/screens/main_screen.dart';
 import 'package:flutter_chat/widgets/rounded_button.dart';
 
 import '../constants.dart';
-import 'main_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
