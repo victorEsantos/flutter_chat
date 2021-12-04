@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             const Center(
               child: Text(
-                'Chat Flutter - Login',
+                'Login',
                 style: TextStyle(fontSize: 25.0),
               ),
             ),
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     email: email, password: password);
                 Navigator.pushNamed(context, MainScreen.id);
               },
-              color: Colors.blueAccent,
+              color: Color.fromARGB(255, 186, 52, 235),
             ),
           ],
         ),

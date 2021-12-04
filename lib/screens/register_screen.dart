@@ -29,7 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             const Center(
               child: Text(
-                'Chat - Registrar-se',
+                'Registrar-se',
                 style: TextStyle(fontSize: 25.0),
               ),
             ),
@@ -37,8 +37,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               height: 48.0,
             ),
             TextField(
-              decoration:
-                  kTextFieldDecoration.copyWith(hintText: 'Email'),
+              decoration: kTextFieldDecoration.copyWith(hintText: 'Email'),
               textAlign: TextAlign.center,
               keyboardType: TextInputType.emailAddress,
               onChanged: (value) {
@@ -49,8 +48,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               height: 8.0,
             ),
             TextField(
-              decoration:
-                  kTextFieldDecoration.copyWith(hintText: 'Senha'),
+              decoration: kTextFieldDecoration.copyWith(hintText: 'Senha'),
               textAlign: TextAlign.center,
               obscureText: true,
               onChanged: (value) {
@@ -67,7 +65,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     email: email, password: pass);
                 Navigator.pushNamed(context, MainScreen.id);
               },
-              color: Colors.green,
+              color: Color.fromARGB(255, 186, 52, 235),
             ),
           ],
         ),

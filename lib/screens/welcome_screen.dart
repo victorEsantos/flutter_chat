@@ -16,6 +16,8 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
+    const welcomeMessage = "Bem Vindo";
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -25,22 +27,22 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: [
             const Center(
               child: Text(
-                'FLutter Chat',
-                style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),
+                welcomeMessage,
+                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(
-              height: 30.0,
+              height: 35.0,
             ),
             RoundedButton(
-              color: Colors.blueAccent,
+              color: Color.fromARGB(255, 186, 52, 235),
               title: 'Login',
               onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
               },
             ),
             RoundedButton(
-              color: Colors.green,
+              color: Color.fromARGB(255, 186, 52, 235),
               title: 'Registrar-se',
               onPressed: () {
                 Navigator.pushNamed(context, RegisterScreen.id);
