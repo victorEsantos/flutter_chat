@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     email: email, password: password);
                 Navigator.pushNamed(context, MainScreen.id);
               },
-              color: Color.fromARGB(255, 186, 52, 235),
+              color: kAppDefaultMainCOlor,
             ),
           ],
         ),

@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat/screens/welcome_screen.dart';
 
+import '../constants.dart';
+
 final _firestore = FirebaseFirestore.instance;
 late User loggedInUser;
 
@@ -51,7 +53,7 @@ class _MainScreenState extends State<MainScreen> {
               }),
         ],
         title: Text('Chat'),
-        backgroundColor: Colors.black12,
+        backgroundColor: kAppDefaultMainCOlor,
       ),
       body: SafeArea(
         child: Column(
@@ -70,7 +72,7 @@ class _MainScreenState extends State<MainScreen> {
                       onChanged: (value) {
                         messageText = value;
                       },
-                      // decoration: kMessageTextFieldDecoration,
+                      decoration: kMessageTextFieldDecoration,
                     ),
                   ),
                   TextButton(
@@ -157,6 +159,7 @@ class MessageBubble extends StatelessWidget {
   final String sender;
   final String text;
   final bool isMe;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -169,23 +172,18 @@ class MessageBubble extends StatelessWidget {
             sender,
             style: TextStyle(
               fontSize: 12.0,
-              color: Colors.black54,
+              color: Colors.black,
             ),
           ),
           Material(
-            borderRadius: isMe
-                ? BorderRadius.only(
-                    topLeft: Radius.circular(30.0),
-                    bottomLeft: Radius.circular(30.0),
-                    bottomRight: Radius.circular(30.0),
-                  )
-                : BorderRadius.only(
-                    topRight: Radius.circular(30.0),
-                    bottomLeft: Radius.circular(30.0),
-                    bottomRight: Radius.circular(30.0),
-                  ),
-            elevation: 5.0,
-            color: isMe ? Colors.black12 : Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10.0),
+              topRight: Radius.circular(10.0),
+              bottomLeft: Radius.circular(10.0),
+              bottomRight: Radius.circular(10.0),
+            ),
+            elevation: 2.5,
+            color: isMe ? kAppDefaultMainCOlor : Colors.white,
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat/screens/register_screen.dart';
 import 'package:flutter_chat/widgets/rounded_button.dart';
 
+import '../constants.dart';
 import 'login_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -35,14 +36,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 35.0,
             ),
             RoundedButton(
-              color: Color.fromARGB(255, 186, 52, 235),
+              color: kAppDefaultMainCOlor,
               title: 'Login',
               onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
               },
             ),
             RoundedButton(
-              color: Color.fromARGB(255, 186, 52, 235),
+              color: kAppDefaultMainCOlor,
               title: 'Registrar-se',
               onPressed: () {
                 Navigator.pushNamed(context, RegisterScreen.id);

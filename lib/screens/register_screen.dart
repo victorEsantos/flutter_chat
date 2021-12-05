@@ -65,7 +65,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     email: email, password: pass);
                 Navigator.pushNamed(context, MainScreen.id);
               },
-              color: Color.fromARGB(255, 186, 52, 235),
+              color: kAppDefaultMainCOlor,
             ),
           ],
         ),
