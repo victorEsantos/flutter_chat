@@ -18,6 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   late String email;
   late String password;
   final _auth = FirebaseAuth.instance;
+  var erorTxt = '...';
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +63,28 @@ class _LoginScreenState extends State<LoginScreen> {
             RoundedButton(
               title: 'Login',
               onPressed: () async {
-                await _auth.signInWithEmailAndPassword(
-                    email: email, password: password);
-                Navigator.pushNamed(context, MainScreen.id);
+                try {
+                  UserCredential userCredential =
+                      await _auth.signInWithEmailAndPassword(
+                          email: email, password: password);
+                  Navigator.pushNamed(context, MainScreen.id);
+                } on FirebaseAuthException catch (e) {
+                  if (e.code == 'user-not-found') {
+                    setState(() => erorTxt = 'No user found for that email.');
+                  } else if (e.code == 'wrong-password') {
+                    setState(() =>
+                        erorTxt = 'Wrong password provided for that user.');
+                  }
+                }
               },
               color: kAppDefaultMainCOlor,
             ),
+            Center(
+              child: Text(
+                erorTxt,
+                style: TextStyle(color: Colors.red),
+              ),
+            )
           ],
         ),
       ),
