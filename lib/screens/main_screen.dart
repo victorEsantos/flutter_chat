@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat/screens/welcome_screen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../constants.dart';
 
@@ -88,10 +89,7 @@ class _MainScreenState extends State<MainScreen> {
                         'time': FieldValue.serverTimestamp(),
                       });
                     },
-                    child: Text(
-                      'Send',
-                      // style: kSendButtonTextStyle,
-                    ),
+                    child: Icon(FontAwesomeIcons.paperPlane, color: kAppDefaultMainCOlor),
                   ),
                 ],
               ),
@@ -169,7 +167,7 @@ class MessageBubble extends StatelessWidget {
             isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: [
           Text(
-            sender,
+            isMe ? '' : sender.split('@')[0],
             style: TextStyle(
               fontSize: 12.0,
               color: Colors.black,
@@ -189,7 +187,7 @@ class MessageBubble extends StatelessWidget {
               child: Text(
                 text,
                 style: TextStyle(
-                  color: isMe ? Colors.white : Colors.black54,
+                  color: isMe ? Colors.white : Colors.black87,
                   fontSize: 15.0,
                 ),
               ),

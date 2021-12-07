@@ -20,6 +20,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     const welcomeMessage = "Bem Vindo";
 
     return Scaffold(
+      backgroundColor: kAppDefaultMainCOlor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -29,21 +30,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             const Center(
               child: Text(
                 welcomeMessage,
-                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold, color: Colors.white),
               ),
             ),
             const SizedBox(
               height: 35.0,
             ),
             RoundedButton(
-              color: kAppDefaultMainCOlor,
+              btnColor: Colors.white,
+              txtColor: Colors.black,
               title: 'Login',
               onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
               },
             ),
             RoundedButton(
-              color: kAppDefaultMainCOlor,
+              btnColor: Colors.white,
+              txtColor: Colors.black,
               title: 'Registrar-se',
               onPressed: () {
                 Navigator.pushNamed(context, RegisterScreen.id);

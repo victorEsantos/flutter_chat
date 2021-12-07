@@ -23,7 +23,7 @@ const kAppDefaultMainCOlor = Color.fromARGB(255, 186, 52, 235);
 
 const kMessageTextFieldDecoration = InputDecoration(
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-  hintText: 'Type your message here...',
+  hintText: 'Digite sua mensagem...',
   border: InputBorder.none,
 
 );

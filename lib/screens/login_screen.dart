@@ -70,14 +70,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   Navigator.pushNamed(context, MainScreen.id);
                 } on FirebaseAuthException catch (e) {
                   if (e.code == 'user-not-found') {
-                    setState(() => erorTxt = 'No user found for that email.');
+                    setState(() => erorTxt = 'Email não cadastrado.');
                   } else if (e.code == 'wrong-password') {
                     setState(() =>
-                        erorTxt = 'Wrong password provided for that user.');
+                        erorTxt = 'Senha ou usuário inválido.');
                   }
                 }
               },
-              color: kAppDefaultMainCOlor,
+              btnColor: kAppDefaultMainCOlor,
+              txtColor: Colors.white,
             ),
             Center(
               child: Text(
