@@ -21,4 +21,3 @@ A tela de cadastro é onde o usuário realizará o registro do usuário e senha 
 ## Tela principal
 Tela onde os usuários poderão conversar entre si.
 
-# CONSIDERAÇÕES
