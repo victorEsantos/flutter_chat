@@ -21,3 +21,5 @@ A tela de cadastro é onde o usuário realizará o registro do usuário e senha 
 ## Tela principal
 Tela onde os usuários poderão conversar entre si.
 
+Com o aplicativo em produção, os usuários logados poderão conversar entre si através da interface gráfica. As mensagens enviadas serão registradas no banco com os respectivos usuários destinatário e remetente, para que os registros sejam atualizados com o conteúdo e data de envio.
+
